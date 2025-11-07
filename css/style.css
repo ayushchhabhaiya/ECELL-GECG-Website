@@ -1,8 +1,9 @@
-* {
+* {            
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Ubuntu", sans-serif;     
+    image-rendering: optimizeSpeed;       
 }
 
 
@@ -993,7 +994,7 @@ h3 {
 .sub-header-blogs {
     height: 50vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(../img/blogs.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../img/blogs.jpg);
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -1008,6 +1009,129 @@ h3 {
 }
 
 
+
+/*---------New Blog Section-----------*/
+
+.new-blog{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.new-blog-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffebb090;
+}
+
+.new-blog-heading span{
+    padding: auto;
+    margin: 25px auto 20px;
+    font-size: 35px;
+    font-weight: 400;
+    color: #eeb303;
+}
+
+.new-blog-container{
+    display: flex;
+    margin: 20px auto;
+    flex-wrap: wrap;
+/*  justify-content: flex-start;  */  /*  "for small box effect"  */
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.new-blog-box{
+/*  width: 350px;    */  /*  "for small box like look"  */
+    width: 700px;
+    background-color: #ffffff5e;
+    border: 2px solid #f7ba03;
+    margin: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+}
+
+.new-blog-box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #ffebb090;
+}
+
+.new-blog-img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.new-blog-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.new-blog-text{
+    padding: 0 20px 30px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-blog-text p{
+padding-bottom: 5px;
+color: #777;
+font-size: 0.9rem;
+}
+
+/*
+@media (max-width: 768px) {
+    .new-blog-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .new-blog-container {
+        grid-template-columns: 1fr; 
+}
+*/
+
+@media(max-width:1250px){
+    .new-blog-box{
+    /*  width: 350px;  */  /*  "for small box effect"  */
+        width: 800px;
+    }
+}
+
+@media(max-width:1100px){
+    .new-blog-box{
+        width: 70%;
+    }
+}
+
+@media(max-width:550px){
+    .new-blog-box{
+        margin: 20px 10px;
+        width: 100%;
+    }
+    #new-blog{
+        padding: 20px;
+    }
+}
+
+
+/*---------------x-x-x-x-x-x-x----------------------*/
 
 
 
@@ -1056,7 +1180,7 @@ main {
 .post-image img {
     width: 100%;
     /* Full width image */
-    height: 100%;
+    height: auto;
     /* Maintain aspect ratio */
     transition: transform 0.3s ease;
     /* Smooth zoom on hover */
@@ -1076,8 +1200,9 @@ h2 {
 .post-date {
     font-size: 0.9em;
     /* Smaller font for the date */
-    color: #777;
+    color: #ababab;
     /* Grey color for date */
+    font-weight: 100;
 }
 
 .category {
@@ -1085,7 +1210,7 @@ h2 {
     /* Display as inline-block */
     background: #ffebb051;
     /* Light blue background */
-    color: #666;
+    color: #888;
     /* Dark blue text */
     padding: 5px 10px;
     /* Padding around the category */
@@ -1176,10 +1301,11 @@ body {
 
 /* Header styles */
 header {
-    background: #ffbf00;
-    color: #ffffff;
+    background: #9d9068;
+    color: #37372f;
     padding-bottom: 15px;
-    text-align: center;
+    padding-right: 50px;
+    text-align: right;
 }
 
 
@@ -1198,6 +1324,8 @@ main {
     /* White background for the content */
     padding: 20px;
     /* Inner padding for the content */
+    border: 3px rgba(255, 238, 0, 1);
+    
     border-radius: 8px;
     /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -1206,6 +1334,8 @@ main {
 
 .full-post h2 {
     margin: 20px 0;
+    text-align: left;
+    font-size: 30px;
     /* Space above and below the title */
 }
 
@@ -1239,13 +1369,13 @@ footer {
 }
 
 .post-image {
-    width: 70%;
+    width: 100%;
     /* Make images responsive */
     height: auto;
     /* Maintain aspect ratio */
     border-radius: 8px;
     /* Rounded corners for images */
-    margin: 15px 0;
+    margin: 15px auto;
     /* Space above and below the images */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* Subtle shadow effect */
@@ -1258,7 +1388,7 @@ footer {
     /* Space above the button */
     padding: 10px 20px;
     /* Padding for the button */
-    background: #ffbf00;
+    background: #ffbf0086;
     /* Dark background for button */
     color: #ffffff;
     /* White text */
